@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(250, 245, 245);
+    text-align: center;
+}
+
+#container{
+    width: 1325px;
+    height: 495px;
+    border: 1px solid rgb(70, 143, 63);
+    position: relative;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #51534f;
+}
+
+.card{
+    width: 160px;
+    height: 240px;
+    position: absolute;
+    border-radius: 10px;
+    perspective: 600px;
+    
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transition: all 1s;
+    backface-visibility: hidden;
+}
+
+.back{
+    background: url("../img/verso.jpg");
+}
+
+.back.flipped{
+    transform: rotateY(180deg);
+}
+
+.front{
+    transform: rotateY(-180deg);
+}
+
+.front.flipped{
+    transform: rotateY(0deg);
+}
+
+.card:hover{
+    box-shadow: 0 0 10px rgb(142, 197, 110);
+}
+
+.face.flipped.match{
+    box-shadow: 0 0 10px #0f0;
+}
+
+#modalGameOver{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -2;
+}
+
+#imgGameOver{
+    margin-top: 100px;
+}
+
+#imgMatchSign{
+    position: relative;
+    top: 250px;
+    transition-property: top, opacity;
+    transition-duration: 1.5s;
+    opacity: 1;
+    z-index: -1;
+}
